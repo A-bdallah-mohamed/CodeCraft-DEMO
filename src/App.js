@@ -1,16 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Temp from './components/temp';
-import Home from './websites/website1/home';
+import Website1 from './websites/website1/website1';
 import React ,{useState} from 'react';
 function App() {
   const [editable,seteditable] = useState(true)
   return (
-    <>
-<Temp />
-<Home editable={editable}/>
-<Home />
-</>
+    <div className='container'>
+<Website1 />
+</div>
   );
 }
 
