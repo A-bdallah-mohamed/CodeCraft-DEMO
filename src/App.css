@@ -1,58 +1,61 @@
 .website1container{
-  background-color: rgb(222, 247, 255);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
+  align-items: center;
 max-width: 100vw;
   width: auto;
   overflow-x: hidden;
 }
 .container{
 max-width: 100vw;
+
 }
 .website1{
 max-width: 100vw;
   width: 1380px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .homepage{
 display: flex;
 position: relative;
-align-items: center;
-justify-content: space-between;
-max-width: 100vw;
-height: auto;
+overflow: hidden;
+flex-direction: column;
+gap: 20px;
+max-width: 97vw;
 width: 1380px;
-background-color: rgb(217, 217, 217);
-height: 800px;
-border: 1px solid red;
-border-bottom-left-radius: 98px;
-border-bottom-right-radius: 98px;
+background-color: rgb(226, 226, 226);
+height: 710px;
+border: 5px solid white;
+border-radius: 98px;
 z-index: 10;
 }
 .seconddiv{
 width: 1380px;
-height: 500px;
+height: 400px;
 max-width: 100vw;
 z-index: 9;
 background-color: rgb(255, 255, 255);
 position: relative;
-border-bottom-left-radius: 98px;
-border-bottom-right-radius: 98px;
+border-radius: 98px;
 margin-top: -100px;
 }
 .thirddiv{
 position: relative;
-
 align-items: center;
 justify-content: space-between;
-max-width: 100vw;
+max-width: 97vw;
 height: auto;
-width: 1380px;
-background-color: rgb(217, 217, 217);
+width: 99%;
+background-color: rgb(226, 226, 226);
 height: 700px;
-
+border: 5px solid white;
 z-index: 8;
 margin-top: -100px;
-max-width: 100vw;
 }
 .fourthdiv{
   position: relative;
@@ -63,4 +66,148 @@ max-width: 100vw;
   width: 1380px;
   z-index: 9;
   background-color: white;
+}
+header{
+max-width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-weight: 500;
+}
+span{
+  font-weight: lighter;
+}
+header div{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+header button{
+  width: 100px;
+  border: 0;
+  background-color: white;
+  border-radius: 50px;
+  height: 35px;
+  font-weight:bold;
+  transition: 1s ease all;
+  border: 1px solid white;
+}
+header button:hover{
+  transition: 0.5s ease all;
+  background-color: rgb(226, 226, 226);
+  width: 110px;
+  height: 38px;
+  border: 1px solid black;
+}
+ul{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+.image{
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 100%;
+  border: 3px solid white;
+}
+.mainsection{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.imagecontainer{
+  position: relative;
+}
+.textonimage{
+  position: absolute;
+  width: auto;
+  height: 35px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  top: 30px;
+  transform: rotateZ(-5deg);
+  left: 70px;
+  white-space: nowrap;
+}
+.maintext{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Sedan", serif;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.mainsection button{
+  background-color: black;
+  color: white;
+  border: 0;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 50px;
+  height: 60px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.5s ease;
+}
+.mainsection button:hover{
+  padding: 0 55px;
+  height: 65px;
+  transition: all 0.5s ease;
+  background-color: rgb(30, 30, 30);
+}
+li{
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+li:after{
+content: "";
+border: 0px solid black;
+width: 0%;
+transition: all 0.5s ease;
+margin-top: 2px;
+}
+li:hover::after{
+  border: 1px solid black;
+width: 100%;
+transition: all 0.5s ease;
+}
+button{
+  cursor: pointer;
+}
+.seconddivcomponentscontainer{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+height: auto;
+max-width: 200px;
+}
+.logoscontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 20px;
 }
