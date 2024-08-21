@@ -1,5 +1,9 @@
 import React from 'react'
 import { LuExternalLink } from "react-icons/lu";
+import { VscTerminalTmux } from "react-icons/vsc";
+import { MdLaptopChromebook } from "react-icons/md";
+import { MdOutlineArtTrack } from "react-icons/md";
+import { MdDeveloperBoard } from "react-icons/md";
 
 export default function Website1() {
   return (
@@ -44,7 +48,35 @@ export default function Website1() {
 </div>
     </div>
     <div className='thirddiv'>
-      
+      <div className='thirdcomponents'>
+<h1>Collaborate with brands and agencies<br /> to create impactful results</h1>
+<div className='button2lines'>
+  <button>Results</button>
+</div>
+
+<div className='departments'>
+    <div className='department'>
+<VscTerminalTmux  className='deplogo'/>
+<h5>UI & UX</h5>
+<p>Designing interfaces that are<br />intuitive, efficient and<br />enjoyable to use.</p>
+    </div>
+    <div className='department'>
+<MdLaptopChromebook className='deplogo' />
+<h5>Web & Mobile app</h5>
+<p>Transforming ideas into<br />exceptional web and mobile<br />app experiences.</p>
+    </div>
+    <div className='department'>
+<MdOutlineArtTrack className='deplogo' />
+<h5>Design & Creative</h5>
+<p>Crafting visually stunning<br />designs that connect with your<br />audience.</p>
+    </div>
+    <div className='department'>
+<MdDeveloperBoard className='deplogo' />
+<h5>Development</h5>
+<p>Bringing your vision to life with<br />the latest technology and<br />design trends.</p>
+    </div>
+  </div>
+      </div>
       </div>
       <div className='fourthdiv'>
       
