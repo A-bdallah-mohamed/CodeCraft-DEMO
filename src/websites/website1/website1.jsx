@@ -4,6 +4,8 @@ import { VscTerminalTmux } from "react-icons/vsc";
 import { MdLaptopChromebook } from "react-icons/md";
 import { MdOutlineArtTrack } from "react-icons/md";
 import { MdDeveloperBoard } from "react-icons/md";
+import { LiaHandshake } from "react-icons/lia";
+import '../../website1.css';
 
 export default function Website1() {
   return (
@@ -79,7 +81,22 @@ export default function Website1() {
       </div>
       </div>
       <div className='fourthdiv'>
-      
+<div className='fourthfirst'>
+        <LiaHandshake className='handshake'/>
+        <h1>Tell me about your next<br/>project</h1>
+ <div className='buttonscontainer'><button style={{backgroundColor:'black' , color:'white'}}><LuExternalLink /> Email me</button ><button style={{backgroundColor:'white'}}>Whatsapp</button>  </div>
+ </div>
+ <div className='fourthsecond'>
+  <div>© 2024 All right reserved</div>
+  
+<ul>
+  <li>LinkedIN</li>
+  <span>/</span>
+  <li>Dribble</li>
+  <span>/</span>
+  <li>Instagram</li>
+</ul>
+ </div>
       </div>
 </div>
 
