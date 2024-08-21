@@ -2,12 +2,37 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-
+align-items: center;
     justify-content: center;
 }
 .websiteborder{
     width: 1380px;
     height: auto;
-    overflow: auto;
-    border: 1px solid rgb(255, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.websiteimage{
+    width: 390px;
+    height: auto;
+}
+.websiteimagecontainer{
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+    border-radius: 15px;
+    width: 390px;
+    padding: 0px 0px;
+    transition: all 0.5s ease;
+    transform: rotate(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.websiteimagecontainer:hover{
+    transition: all 0.5s ease;
+    padding: 10px 10px;
+    transform: rotate(2deg);
+    border: 1px solid rgb(88, 88, 88);
+    cursor: pointer;
 }
