@@ -84,7 +84,7 @@ export default function Website1() {
 <div className='fourthfirst'>
         <LiaHandshake className='handshake'/>
         <h1>Tell me about your next<br/>project</h1>
- <div className='buttonscontainer'><button style={{backgroundColor:'black' , color:'white'}}><LuExternalLink /> Email me</button ><button style={{backgroundColor:'white'}}>Whatsapp</button>  </div>
+ <div className='buttonscontainer'><button className='button1'><LuExternalLink /> Email me</button ><button className='button2'>Whatsapp</button>  </div>
  </div>
  <div className='fourthsecond'>
   <div>© 2024 All right reserved</div>
