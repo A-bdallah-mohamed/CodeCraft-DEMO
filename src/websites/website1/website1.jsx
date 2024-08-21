@@ -5,7 +5,7 @@ import { MdLaptopChromebook } from "react-icons/md";
 import { MdOutlineArtTrack } from "react-icons/md";
 import { MdDeveloperBoard } from "react-icons/md";
 import { LiaHandshake } from "react-icons/lia";
-import '../../website1.css';
+import './website1.css';
 
 export default function Website1() {
   return (

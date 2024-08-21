@@ -1,0 +1,13 @@
+.platformmainpage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    justify-content: center;
+}
+.websiteborder{
+    width: 1380px;
+    height: auto;
+    overflow: auto;
+    border: 1px solid rgb(255, 0, 0);
+}
