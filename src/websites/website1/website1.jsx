@@ -8,7 +8,8 @@ import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
 
 import { Link } from 'react-router-dom';
-export default function Website1() {
+export default function Website1({editable}) {
+
   return (
     
 <div className='website1container'>

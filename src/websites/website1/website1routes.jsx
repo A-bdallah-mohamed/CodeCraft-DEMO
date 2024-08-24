@@ -4,7 +4,9 @@ import { Switch , Link} from 'react-router-dom';
 import Website1 from './website1';
 import Learnmorepage from './learnmorepage';
 import { FaBackward } from "react-icons/fa";
+import { useState } from 'react';
 export default function Website1routes() {
+  const [editable,seteditable] = useState(false)
   return (
     <>
     
@@ -16,7 +18,8 @@ export default function Website1routes() {
  </div>
 </div>
    <Routes>
-        <Route path='/' element={<Website1/>} />
+        <Route path='/' element={<Website1 editable={true} />} />
+        <Route path='/Edit' element={<Website1 />} />
         <Route path='/Learnmore' element={<Learnmorepage/>} />
     </Routes>
     </>
