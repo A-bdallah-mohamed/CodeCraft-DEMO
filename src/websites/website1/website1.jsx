@@ -6,10 +6,19 @@ import { MdOutlineArtTrack } from "react-icons/md";
 import { MdDeveloperBoard } from "react-icons/md";
 import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
-
+import { FaBackward } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 export default function Website1() {
   return (
+    
 <div className='website1container'>
+ <div className='goback'>
+  <div className='iconntext'>
+    <Link to='/' className='iconntext'>
+  <FaBackward className='backicon'/> <p> Back to Main page </p>
+  </Link>
+  </div>
+ </div>
     <div className='website1'>
     <div className='homepage'>
       <header>
