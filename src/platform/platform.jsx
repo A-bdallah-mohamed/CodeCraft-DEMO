@@ -16,7 +16,9 @@ export default function Platform() {
    
    </div>
    <div className='buttons'>
-   <button className='viewbutton websitebutton'><Link to='/website1'>View</Link></button>
+   <Link to='/landingpage1'>
+   <button className='viewbutton websitebutton'>View</button>
+   </Link>
    <button className='editbutton websitebutton'>Edit</button>
    </div>
         </div>

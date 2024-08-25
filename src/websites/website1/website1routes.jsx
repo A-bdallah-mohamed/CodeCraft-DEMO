@@ -18,7 +18,7 @@ export default function Website1routes() {
  </div>
 </div>
    <Routes>
-        <Route path='/' element={<Website1 editable={true} />} />
+        <Route path='/' element={<Website1 />} />
         <Route path='/Edit' element={<Website1 />} />
         <Route path='/Learnmore' element={<Learnmorepage/>} />
     </Routes>
