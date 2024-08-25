@@ -6,13 +6,13 @@ import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
 import websitesDB from './db/websiteDB';
 function App() {
   const DB = websitesDB
-  const [editable,seteditable] = useState(true)
+  const [editable,seteditable] = useState(false)
   return (
      <Router>
     <Routes>
-      <Route path="/" element={<Platform />} />
+      <Route path="/" element={<Platform editable={editable} seteditable={seteditable} />} />
       {websitesDB.map((website, inx) => (
-              <Route path={`/${website.name}/*`} element={<website.component />} key={inx} />
+              <Route path={`/${website.name}/*`} element={<website.component editable={editable} seteditable={seteditable} />} key={inx} />
            
       ))}
     </Routes>

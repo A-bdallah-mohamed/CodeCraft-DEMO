@@ -8,7 +8,7 @@ import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
 
 import { Link } from 'react-router-dom';
-export default function Website1({editable}) {
+export default function Website1({editable , seteditable}) {
 
   return (
     
@@ -18,7 +18,7 @@ export default function Website1({editable}) {
       <header>
 <div>
   <p>OtherWebsiteName.com</p>
-  <button>Copy</button>
+  {editable && ( <button>Copy</button>) }
   <button>Work</button>
 </div>
 <ul>
@@ -37,7 +37,7 @@ export default function Website1({editable}) {
 <div className='maintext'>
       <h1>Building digital<br/>products, brands, and<br/>experience.</h1>
       </div>
-      <Link to='Learnmore'> <button>Learn more <LuExternalLink /></button></Link>
+  <button>Learn more <LuExternalLink /></button>
       </div>
     </div>
     <div className='seconddiv'>
