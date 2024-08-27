@@ -16,7 +16,7 @@ export default function Platform({editable , seteditable}) {
    
    </div>
    <div className='buttons'>
-   <Link to='/landingpage1'>
+   <Link to='/landingpage1'> 
    <button className='viewbutton websitebutton'>View</button>
    </Link>
    <Link to='/landingpage1' onClick={() => seteditable(true)}>
