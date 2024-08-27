@@ -6,7 +6,7 @@ import { MdOutlineArtTrack } from "react-icons/md";
 import { MdDeveloperBoard } from "react-icons/md";
 import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
-
+import DoIfEditbale from '../../custom hooks/ifeditable';
 import { Link } from 'react-router-dom';
 export default function Website1({editable , seteditable}) {
 

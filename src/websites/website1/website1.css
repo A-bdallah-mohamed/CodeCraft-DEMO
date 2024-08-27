@@ -333,10 +333,11 @@ h5,p{
   font-weight: 500;
 }
 .goback{
-  width: 95%;
+display: flex;
+align-items: center;
+justify-content: center;
   margin-top: 10px;
-  max-width: 97vw;
-  max-width: 1380px;
+width: 100%;
   margin-bottom: 10px;
 }
 .iconntext{
@@ -344,13 +345,29 @@ h5,p{
   display: flex;
   align-items: center;
   gap: 5px;
-  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 97vw;
+  max-width: 1380px;
 }
-.iconntext:hover{
+.backicon:hover{
   cursor: pointer;
 }
-.iconntext:hover .backicon{
+.backicon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.backicon:hover{
   transform: translateX(-20px);
+  transition: all ease 0.5s;
+}
+.backicon:hover .backicon2{
+  transform: translateX(-25px);
+  transition: all ease 0.5s;
+}
+.backicon2{
   transition: all ease 0.5s;
 }
 p{
