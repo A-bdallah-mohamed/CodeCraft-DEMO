@@ -8,8 +8,69 @@ import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
 import DoIfEditbale from '../../custom hooks/ifeditable';
 import { Link } from 'react-router-dom';
+import { useRef , useState } from 'react';
 export default function Website1({editable , seteditable}) {
+/* 
 
+ADD AN INPUT COMPONENT WITH SUBMIT BUTTON IN COMPONENTS FILE 
+
+WE WILL MAKE A CUSTOM HOOK 
+
+
+import { useState } from 'react';
+
+// Custom hook to manage text and input value
+const useTextUpdate = (initialText) => {
+  const [text, setText] = useState(initialText);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setText(inputValue);
+  };
+
+  return {
+    text,
+    inputValue,
+    handleInputChange,
+    handleSubmit,
+    setInputValue, // Optional: If you need to set inputValue programmatically
+  };
+};
+
+export default useTextUpdate;
+
+----------------THEN HERE ----------------------
+import useTextUpdate from './useTextUpdate'; // Path to your custom hook
+const { text, inputValue, handleInputChange, handleSubmit } = useTextUpdate("OtherWebsiteName.com"); --------------FOR EAXMPLE------
+return (
+    <div className='website1container'>
+      <div className='website1'>
+        <div className='homepage'>
+          <header>
+            <div>
+              <p>{text}</p>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                />
+                <button type="submit">Update Text</button>
+              </form>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+  */
   return (
     
 <div className='website1container'>
