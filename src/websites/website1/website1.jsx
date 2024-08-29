@@ -9,68 +9,13 @@ import './website1.css';
 import DoIfEditbale from '../../custom hooks/ifeditable';
 import { Link } from 'react-router-dom';
 import { useRef , useState } from 'react';
+import useChangetext from '../../custom hooks/Changetext';
 export default function Website1({editable , seteditable}) {
-/* 
 
-ADD AN INPUT COMPONENT WITH SUBMIT BUTTON IN COMPONENTS FILE 
+// DO INPUT TEXT COMPONENT RENDERS ON MOUSE CORDINATES
 
-WE WILL MAKE A CUSTOM HOOK 
+  const text1 = useChangetext("OtherWebsiteName.com",editable)
 
-
-import { useState } from 'react';
-
-// Custom hook to manage text and input value
-const useTextUpdate = (initialText) => {
-  const [text, setText] = useState(initialText);
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setText(inputValue);
-  };
-
-  return {
-    text,
-    inputValue,
-    handleInputChange,
-    handleSubmit,
-    setInputValue, // Optional: If you need to set inputValue programmatically
-  };
-};
-
-export default useTextUpdate;
-
-----------------THEN HERE ----------------------
-import useTextUpdate from './useTextUpdate'; // Path to your custom hook
-const { text, inputValue, handleInputChange, handleSubmit } = useTextUpdate("OtherWebsiteName.com"); --------------FOR EAXMPLE------
-return (
-    <div className='website1container'>
-      <div className='website1'>
-        <div className='homepage'>
-          <header>
-            <div>
-              <p>{text}</p>
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={handleInputChange}
-                />
-                <button type="submit">Update Text</button>
-              </form>
-            </div>
-          </header>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-  */
   return (
     
 <div className='website1container'>
@@ -78,7 +23,11 @@ return (
     <div className='homepage'>
       <header>
 <div>
-  <p>OtherWebsiteName.com</p>
+  <p>{text1.text}</p>
+  {/*<form onSubmit={text1.handlesubmit}>
+  <input onChange={text1.handlechange}></input>
+  <button type='submit'>Submit</button>
+  </form>*/}
   {editable && ( <button>Copy</button>) }
   <button>Work</button>
 </div>
