@@ -1,0 +1,21 @@
+.formtext{
+   position: absolute;
+    padding: 15px 50px;
+    border-radius: 10px;
+overflow: hidden;
+    background-color: rgb(243, 243, 243);
+    gap: 5px;
+    display: flex;
+    z-index: 100;
+    border: 2px solid black;
+}
+.formtext input{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px 0;
+}
+
+.formtext button{
+    border-radius: 5px;
+    border: 1px solid black;
+}

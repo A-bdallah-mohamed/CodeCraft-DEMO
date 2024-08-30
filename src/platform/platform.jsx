@@ -4,6 +4,7 @@ import './platform.css'
 import website1image from "../assets/websitesimages/website1.jfif"
 import { Link } from 'react-router-dom'
 export default function Platform({editable , seteditable}) {
+  
   return (
     <div className='platformmainpage'>
         <div className='websiteborder'>

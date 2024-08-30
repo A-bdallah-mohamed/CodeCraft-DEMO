@@ -6,28 +6,32 @@ import { MdOutlineArtTrack } from "react-icons/md";
 import { MdDeveloperBoard } from "react-icons/md";
 import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
-import DoIfEditbale from '../../custom hooks/ifeditable';
 import { Link } from 'react-router-dom';
-import { useRef , useState } from 'react';
+import { useRef , useState , useEffect } from 'react';
 import useChangetext from '../../custom hooks/Changetext';
+import Formtext from '../../components/formtext';
 export default function Website1({editable , seteditable}) {
 
 // DO INPUT TEXT COMPONENT RENDERS ON MOUSE CORDINATES
+const [position,setposition] = useState({x:0,y:0})
+const [formvisible,setformvisible] = useState(false)
+  const text1 = useChangetext("OtherWebsiteName.com",editable,setformvisible)
 
-  const text1 = useChangetext("OtherWebsiteName.com",editable)
+  const handleclick = (e) => {
+    setposition({ x: e.clientX, y: e.clientY });
+    setformvisible(true);
+};
 
   return (
     
 <div className='website1container'>
+{(formvisible && editable ) && <Formtext newtext={text1} position={position}  />}
     <div className='website1'>
     <div className='homepage'>
       <header>
 <div>
-  <p>{text1.text}</p>
-  {/*<form onSubmit={text1.handlesubmit}>
-  <input onChange={text1.handlechange}></input>
-  <button type='submit'>Submit</button>
-  </form>*/}
+  <p onClick={handleclick}>{text1.text}</p>
+
   {editable && ( <button>Copy</button>) }
   <button>Work</button>
 </div>
