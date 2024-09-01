@@ -3,7 +3,7 @@
 import React, {useState,useEffect} from 'react'
 import './forms.css'
 
-export default function formtext({newtext,position}) {
+export default function formtext({newtext,position,formvisible,setformvisible}) {
 
   return (
 
@@ -12,7 +12,8 @@ export default function formtext({newtext,position}) {
             className='formtext'
             style={{ left: position.x, top: position.y, position: 'absolute' }}
         >
-            <input onChange={newtext.handlechange} />
+            <div onClick={()=>setformvisible(false)}>X</div>
+            <input onChange={newtext.handlechange} placeholder={newtext.text}/>
             <button type='submit'>Submit</button>
         </form>
     )

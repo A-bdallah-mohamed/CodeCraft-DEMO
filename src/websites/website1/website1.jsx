@@ -12,7 +12,8 @@ import useChangetext from '../../custom hooks/Changetext';
 import Formtext from '../../components/formtext';
 export default function Website1({editable , seteditable}) {
 
-// DO INPUT TEXT COMPONENT RENDERS ON MOUSE CORDINATES
+
+
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
   const text1 = useChangetext("OtherWebsiteName.com",editable,setformvisible)
@@ -25,7 +26,7 @@ const [formvisible,setformvisible] = useState(false)
   return (
     
 <div className='website1container'>
-{(formvisible && editable ) && <Formtext newtext={text1} position={position}  />}
+{(formvisible && editable ) && <Formtext newtext={text1} position={position} formvisible={formvisible} setformvisible={setformvisible}  />}
     <div className='website1'>
     <div className='homepage'>
       <header>

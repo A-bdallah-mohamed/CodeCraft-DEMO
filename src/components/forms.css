@@ -14,8 +14,31 @@ overflow: hidden;
     border: 1px solid black;
     padding: 5px 0;
 }
-
+.formtext input::placeholder{
+padding-left: 5px;
+}
 .formtext button{
     border-radius: 5px;
     border: 1px solid black;
+}
+.formtext div{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2px;
+    right: 4px;
+width: 20px;
+height: 20px;
+padding: 3px 3px;
+border-radius: 100%;
+    color: black;
+    background-color: rgb(174, 174, 174);
+    transition: all ease 0.3s ;
+}
+.formtext div:hover{
+color: white;
+background-color: rgb(40, 39, 39);
+cursor: pointer;
+transition: all ease 0.3s ;
 }
