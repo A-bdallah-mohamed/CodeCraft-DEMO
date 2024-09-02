@@ -7,21 +7,31 @@ overflow: hidden;
     gap: 5px;
     display: flex;
     z-index: 100;
-    border: 2px solid black;
-}
-.formtext input{
-    border-radius: 5px;
     border: 1px solid black;
+    flex-direction: column;
+}
+.inputnbutton{
+    gap: 10px;
+    display: flex;
+}
+.inputnbutton input{
+    border-radius: 5px;
+    border: 1px solid rgb(145, 155, 199);
     padding: 5px 0;
 }
-.formtext input::placeholder{
+.inputnbutton input:focus{
+   
+    outline: 2px solid rgb(63, 98, 255);
+}
+.inputnbutton input::placeholder{
 padding-left: 5px;
 }
-.formtext button{
+.inputnbutton button{
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(145, 155, 199);
+    padding: 5px 5px;
 }
-.formtext div{
+.closelogo{
     position: absolute;
     display: flex;
     align-items: center;
@@ -33,12 +43,11 @@ height: 20px;
 padding: 3px 3px;
 border-radius: 100%;
     color: black;
-    background-color: rgb(174, 174, 174);
+    background-color: rgba(174, 174, 174, 0);
     transition: all ease 0.3s ;
 }
-.formtext div:hover{
-color: white;
-background-color: rgb(40, 39, 39);
+.closelogo:hover{
+background-color: rgb(221, 221, 221);
 cursor: pointer;
 transition: all ease 0.3s ;
 }
