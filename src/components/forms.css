@@ -1,6 +1,6 @@
 .formtext{
    position: absolute;
-    padding: 15px 50px;
+    padding: 10px 25px;
     border-radius: 10px;
 overflow: hidden;
     background-color: rgb(243, 243, 243);
@@ -9,6 +9,13 @@ overflow: hidden;
     z-index: 100;
     border: 1px solid black;
     flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.formappeared{
+opacity: 1;
+    transition: all ease 0.5s;
 }
 .inputnbutton{
     gap: 10px;
