@@ -10,11 +10,8 @@ overflow: hidden;
     border: 1px solid black;
     flex-direction: column;
     overflow: hidden;
-    opacity: 0;
-    transition: all ease 0.5s;
-}
-.formappeared{
-opacity: 1;
+    width: auto;
+    height: auto;
     transition: all ease 0.5s;
 }
 .inputnbutton{
