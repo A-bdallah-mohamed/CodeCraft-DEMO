@@ -17,7 +17,7 @@ export default function Website1({editable , seteditable}) {
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
 const [datatype,setdatatype] = useState(null)
-const [formtype,setformtype] = useState(null)
+const [formtype,setformtype] = useState()
   const text1 = useChangetext("OtherWebsiteName.com",editable,setformvisible)
   const text2 = useChangetext("Work",editable,setformvisible)
   const handleclick = (e,data,type) => {
@@ -31,7 +31,7 @@ const [formtype,setformtype] = useState(null)
   return (
     
 <div className='website1container'>
-{(formvisible && editable ) && <Formtext newtext={formtype} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype}/>}
+{(formvisible && editable ) && <Formtext newtext={text1} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype}/>}
     <div className='website1'>
     <div className='homepage'>
       <header>

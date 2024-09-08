@@ -6,14 +6,13 @@ const useChangetext = (text1,condition,setvisible) =>{
     const [prevtext,setprevtext] = useState("")
     const handlechange = (e)  => {
         setnewtext(e.target.value)
+        console.log(newtext)
     }
     const handlesubmit = (e) => {
-e.preventDefault()
-if(condition){
     setprevtext(text)
     settext(newtext)
     setvisible(false)
-}}
+    }
 const undo =()=>{
     setnewtext(prevtext)
     setprevtext(text)
