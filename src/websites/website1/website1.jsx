@@ -38,7 +38,6 @@ const functions = [];
 for(let i=0 ; i<items.length ; i++){
 const item = items[i]
 functions[i] = UseChangetext(item.text,setformvisible)
-console.log(functions[i].text)
 }
   return (
     

@@ -7,7 +7,6 @@ export default function formtext({newtext,position,formvisible,setformvisible,da
   return (
 
         <form
-            onSubmit={newtext.handlesubmit}
             className='formtext '
             style={{ left: position.x, top: position.y, position: 'absolute' }}
         >
@@ -18,8 +17,9 @@ export default function formtext({newtext,position,formvisible,setformvisible,da
             <label htmlFor='text' >Text</label>
             <div className='inputnbutton'>
             <input onChange={(e)=>newtext.handlechange(e)} placeholder={newtext.text} id='text'/>
-            <button type='submit'>Submit</button>
-            <button onClick={newtext.undo}>undo</button>
+            <button type='submit' onClick={newtext.handlesubmit}>Submit</button>
+            <button onClick={newtext.undo} disabled={newtext.disabelundo}>Undo</button>
+            <button onClick={newtext.redo} disabled={newtext.disableredobutton}>Redo</button>
             </div>
 
         </form>
