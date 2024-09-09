@@ -8,38 +8,51 @@ import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
 import { Link } from 'react-router-dom';
 import { useRef , useState , useEffect } from 'react';
-import useChangetext from '../../custom hooks/Changetext';
+import UseChangetext from '../../custom hooks/Changetext';
 import Formtext from '../../components/formtext';
 export default function Website1({editable , seteditable}) {
-
-
-
+ /*loop rendering formtext components for an array of clickable elements 
+ , with a state of an id changing based on the id of the element in the array
+*/
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
 const [datatype,setdatatype] = useState(null)
-const [formtype,setformtype] = useState()
-  const text1 = useChangetext("OtherWebsiteName.com",editable,setformvisible)
-  const text2 = useChangetext("Work",editable,setformvisible)
-  const handleclick = (e,data,type) => {
+const items = [
+  {text:"OtherWebsiteName.com",datatype:"text"},
+  {text:"work",datatype:"button"},
+  {text:"Copy",datatype:"button"}
+]
+const [selectedelment,setselectedelment] = useState(items)
+const [selectedItemId,setselectedItemId] = useState()
+  const handleclick = (e,id) => {
     setposition({ x: e.clientX, y: e.clientY });
     setformvisible(true);
-    setdatatype(data)
-    setformtype(type)
-    console.log(datatype)
+    setselectedItemId(id)
+    setselectedelment(items[id-1])
 };
-
+const itemTexts = items.map((item) => ({
+  ...item,
+  textState: UseChangetext(item.text, editable, setformvisible),
+}));
+const functions = [];
+for(let i=0 ; i<items.length ; i++){
+const item = items[i]
+functions[i] = UseChangetext(item.text,setformvisible)
+console.log(functions[i].text)
+}
   return (
     
 <div className='website1container'>
-{(formvisible && editable ) && <Formtext newtext={text1} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype}/>}
+{(formvisible && editable)  && <Formtext newtext={functions[selectedItemId]} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype} editable={editable}/>}
+
     <div className='website1'>
     <div className='homepage'>
       <header>
 <div>
-  <p onClick={(e)=>handleclick(e,"text",text1)}>{text1.text}</p>
+  <p onClick={(e)=>handleclick(e,0)}>{functions[0].text}</p>
 
   {editable && ( <button>Copy</button>) }
-  <button onClick={(e)=>handleclick(e,"button",text2)}>{text2.text}</button>
+  <button onClick={(e)=>handleclick(e,1)}>{functions[1].text}</button>
 </div>
 <ul>
   <li>LinkedIN</li>

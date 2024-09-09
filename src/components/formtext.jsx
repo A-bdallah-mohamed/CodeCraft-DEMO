@@ -2,9 +2,8 @@
 
 import React, {useState,useEffect} from 'react'
 import './forms.css'
-
-export default function formtext({newtext,position,formvisible,setformvisible,datatype}) {
-    //get back conditional rendering
+import UseChangetext from '../custom hooks/Changetext'
+export default function formtext({newtext,position,formvisible,setformvisible,datatype,editable}) {
   return (
 
         <form
@@ -16,7 +15,7 @@ export default function formtext({newtext,position,formvisible,setformvisible,da
             
   
        
-            <label for="text" >Text</label>
+            <label htmlFor='text' >Text</label>
             <div className='inputnbutton'>
             <input onChange={(e)=>newtext.handlechange(e)} placeholder={newtext.text} id='text'/>
             <button type='submit'>Submit</button>
