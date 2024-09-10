@@ -103,7 +103,7 @@ header div{
   align-items: center;
 }
 header button{
-  width: 100px;
+padding: 0 20px;
   border: 0;
   background-color: white;
   border-radius: 50px;
@@ -115,7 +115,7 @@ header button{
 header button:hover{
   transition: 0.5s ease all;
   background-color: rgb(226, 226, 226);
-  width: 110px;
+  padding: 0 25px;
   height: 38px;
   border: 1px solid black;
 }
