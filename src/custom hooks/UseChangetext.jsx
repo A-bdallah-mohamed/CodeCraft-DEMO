@@ -1,5 +1,5 @@
 import React , { useEffect, useState } from "react";
-import Formtext from "../components/formtext";
+import Form from "../components/Form";
 const UseChangetext = (textt,setvisible) =>{
 
     const [text,    settext ] = useState(textt)
@@ -20,21 +20,13 @@ console.log("item itself",prevtext[itemid])
 console.log("length",prevtext.length)
 console.log( "redo",disableredobutton)
 console.log( "undo",disabelundo)
-setnewarray([...prevtext])
 console.log("new array",newarray)
+setnewarray([...prevtext])
 settext(prevtext[itemid])
-if(itemid < prevtext.length-1){
-    setdisableredobutton(false)
-}
- else if(!itemid < prevtext.length-1){
-    setdisableredobutton(true)
-}
- if (itemid > 0){
-    setdisabelundo(false)
-}
-else if (itemid == 0){
-    setdisabelundo(true)
-}
+    setdisableredobutton(itemid < prevtext.length-1)
+    setdisableredobutton(itemid == prevtext.length-1)
+    setdisabelundo(itemid > 0)
+    setdisabelundo(itemid == 0)
 },[prevtext,itemid,text])
 
 

@@ -8,12 +8,11 @@ import { LiaHandshake } from "react-icons/lia";
 import './website1.css';
 import { Link } from 'react-router-dom';
 import { useRef , useState , useEffect } from 'react';
-import UseChangetext from '../../custom hooks/Changetext';
-import Formtext from '../../components/formtext';
+import UseChangetext from '../../custom hooks/UseChangetext';
+import Form from '../../components/Form';
 export default function Website1({editable , seteditable}) {
- /*loop rendering formtext components for an array of clickable elements 
- , with a state of an id changing based on the id of the element in the array
-*/
+ /* loop rendering formtext components for an array of clickable elements 
+ , with a state of an id changing based on the id of the element in the array */
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
 const [datatype,setdatatype] = useState(null)
@@ -42,7 +41,7 @@ functions[i] = UseChangetext(item.text,setformvisible)
   return (
     
 <div className='website1container'>
-{(formvisible && editable)  && <Formtext newtext={functions[selectedItemId]} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype} editable={editable}/>}
+{(formvisible && editable)  && <Form newtext={functions[selectedItemId]} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype} editable={editable}/>}
 
     <div className='website1'>
     <div className='homepage'>

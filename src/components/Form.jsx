@@ -2,8 +2,8 @@
 
 import React, {useState,useEffect} from 'react'
 import './forms.css'
-import UseChangetext from '../custom hooks/Changetext'
-export default function formtext({newtext,position,formvisible,setformvisible,datatype,editable}) {
+import UseChangetext from '../custom hooks/UseChangetext'
+export default function Form({newtext,position,formvisible,setformvisible,datatype,editable}) {
   return (
 
         <form
