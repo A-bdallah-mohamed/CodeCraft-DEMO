@@ -3,9 +3,11 @@
 import React, {useState,useEffect} from 'react'
 import './forms.css'
 import UseChangetext from '../custom hooks/UseChangetext'
-export default function Form({newtext,position,formvisible,setformvisible,datatype,editable}) {
-  return (
+export default function Form({newtext,position,formvisible,setformvisible,datatype,editable,setselectedItemId}) {
 
+    // add code for image change
+const fontsizes = [10,12,14,16,18,20,22,24,26,28,30]
+  return (
         <form
             className='formtext '
             style={{ left: position.x, top: position.y, position: 'absolute' }}
@@ -14,15 +16,31 @@ export default function Form({newtext,position,formvisible,setformvisible,dataty
             
   
        
-            <label htmlFor='text' >Text</label>
+            <label htmlFor='text' style={{marginBottom:"15px"}} >"{newtext.text}" {datatype}</label>
             <div className='inputnbutton'>
             <input onChange={(e)=>newtext.handlechange(e)} placeholder={newtext.text} id='text'/>
-            <button type='submit' onClick={newtext.handlesubmit}>Submit</button>
+     
             <button onClick={newtext.undo} disabled={newtext.disabelundo}>Undo</button>
             <button onClick={newtext.redo} disabled={newtext.disableredobutton}>Redo</button>
+          
+           
             </div>
-
-        </form>
+            <div className='fontsizeselect'>
+        <label htmlFor='fontsize'>Font Size : </label>
+            <select onChange={(e)=>newtext.handlefontchange(e)} id='fontsize'>
+            <option value={newtext.fontsize}>{newtext.fontsize}</option>
+          {fontsizes.map((number,indx)=> (
+            newtext.fontsize == number ? <></> :
+            <option key={indx} value={number}>{number} </option>
+          ))}
+            </select>
+            <label htmlFor='fontsize'>Color : </label>
+     <input type='color' onChange={(e)=>newtext.colorhandlechange(e)} value={newtext.Color}></input>
+</div>
+<button type='submit' onClick={newtext.handlesubmit}>Submit</button>
+            </form>
+     
+  
     )
     
   

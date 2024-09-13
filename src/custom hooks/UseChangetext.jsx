@@ -1,6 +1,13 @@
 import React , { useEffect, useState } from "react";
 import Form from "../components/Form";
-const UseChangetext = (textt,setvisible) =>{
+import * as FaIcons from 'react-icons/fa'
+const UseChangetext = (textt,setvisible,icon) =>{
+
+// reutrn outline style
+// change text color
+// change text style (bordered, underlined, italic)
+// change text size with a dropdown
+// check if changing react icons with react icons api possible
 
     const [text,    settext ] = useState(textt)
     const [newtext,setnewtext] = useState("")
@@ -12,7 +19,21 @@ const UseChangetext = (textt,setvisible) =>{
     const handlechange = (e)  => {
         setnewtext(e.target.value)
     }
-
+    const [fontsize,setfontsize] = useState(16)
+    const [newfont,setnewfont] = useState(fontsize)
+    const handlefontchange = (e) => {
+         e.preventDefault()
+        setnewfont(e.target.value)
+    }
+const style = {
+    fontSize: fontsize
+}
+const [colorcode,setcolorcode] = useState("#000000")
+const [Color,setColor] = useState(colorcode)
+const colorhandlechange = (e) =>{
+    e.preventDefault();
+    setcolorcode(e.target.value)
+}
 useEffect(()=>{
 console.log("existing array",prevtext)
 console.log("id",itemid)
@@ -21,29 +42,38 @@ console.log("length",prevtext.length)
 console.log( "redo",disableredobutton)
 console.log( "undo",disabelundo)
 console.log("new array",newarray)
+console.log("Color",colorcode)
+console.log("font size in ",itemid, " is ",fontsize)
+console.log("react icons FA",FaIcons.FaMix)
 setnewarray([...prevtext])
 settext(prevtext[itemid])
     setdisableredobutton(itemid < prevtext.length-1)
     setdisableredobutton(itemid == prevtext.length-1)
     setdisabelundo(itemid > 0)
     setdisabelundo(itemid == 0)
-},[prevtext,itemid,text])
+},[prevtext,itemid,text,colorcode])
 
 
     const handlesubmit = (e) => {
-        e.preventDefault();
-const newid = itemid + 1
-const length = prevtext.length
-const diff = length - newid
-const neww = newarray
-neww.splice(newid , diff , newtext)
-setnewarray(neww)
-        setitemid(itemid+1)
 
-        setprevtext(newarray);
 
-    setvisible(false)
+        e.preventDefault()
 
+if(!newtext == ""){
+    const newid = itemid + 1
+    const length = prevtext.length
+    const diff = length - newid
+    const neww = newarray
+    neww.splice(newid , diff , newtext)
+    
+    
+            setnewarray(neww)
+            setitemid(itemid+1)
+            setprevtext(newarray);
+}
+setColor(colorcode)
+        setvisible(false)
+        setfontsize(newfont)
     }
 
 
@@ -66,6 +96,8 @@ const redo = (e) => {
     }
     setvisible(false)
 }
+
+
     return { 
         text, 
         newtext, 
@@ -73,7 +105,7 @@ const redo = (e) => {
         handlesubmit, 
         setnewtext,
         prevtext,
-        undo, redo ,disableredobutton ,disabelundo
+        undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange
       };
 }
 export default UseChangetext;

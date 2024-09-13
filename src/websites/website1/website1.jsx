@@ -11,11 +11,10 @@ import { useRef , useState , useEffect } from 'react';
 import UseChangetext from '../../custom hooks/UseChangetext';
 import Form from '../../components/Form';
 export default function Website1({editable , seteditable}) {
- /* loop rendering formtext components for an array of clickable elements 
- , with a state of an id changing based on the id of the element in the array */
+
+
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
-const [datatype,setdatatype] = useState(null)
 const items = [
   {text:"OtherWebsiteName.com",datatype:"text"},
   {text:"work",datatype:"button"},
@@ -36,21 +35,24 @@ const itemTexts = items.map((item) => ({
 const functions = [];
 for(let i=0 ; i<items.length ; i++){
 const item = items[i]
-functions[i] = UseChangetext(item.text,setformvisible)
+functions[i] = UseChangetext(item.text,setformvisible,item.icon)
 }
+useEffect(()=> {
+console.log(functions[0].fontsize,"a7a")
+},[functions])
   return (
     
 <div className='website1container'>
-{(formvisible && editable)  && <Form newtext={functions[selectedItemId]} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={datatype} editable={editable}/>}
+{(formvisible && editable)  && <Form newtext={functions[selectedItemId]} position={position} formvisible={formvisible} setformvisible={setformvisible}  datatype={itemTexts[selectedItemId].datatype} editable={editable}/>}
 
     <div className='website1'>
     <div className='homepage'>
       <header>
 <div>
-  <p onClick={(e)=>handleclick(e,0)}>{functions[0].text}</p>
+  <p onClick={(e)=>handleclick(e,0)} style={{fontSize:`${functions[0].fontsize}px`,color:`${functions[0].Color}`}}>{functions[0].text}</p>
 
   {editable && ( <button>Copy</button>) }
-  <button onClick={(e)=>handleclick(e,1)}>{functions[1].text}</button>
+  <button onClick={(e)=>handleclick(e,1)} style={{fontSize:`${functions[1].fontsize}px`,color:`${functions[1].Color}`}}>{functions[1].text}</button>
 </div>
 <ul>
   <li>LinkedIN</li>
