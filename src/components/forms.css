@@ -73,4 +73,15 @@ select{
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+
+}
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkboxes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

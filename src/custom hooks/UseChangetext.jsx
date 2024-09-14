@@ -4,10 +4,8 @@ import * as FaIcons from 'react-icons/fa'
 const UseChangetext = (textt,setvisible,icon) =>{
 
 // reutrn outline style
-// change text color
 // change text style (bordered, underlined, italic)
-// change text size with a dropdown
-// check if changing react icons with react icons api possible
+// change react icons
 
     const [text,    settext ] = useState(textt)
     const [newtext,setnewtext] = useState("")
@@ -33,6 +31,12 @@ const [Color,setColor] = useState(colorcode)
 const colorhandlechange = (e) =>{
     e.preventDefault();
     setcolorcode(e.target.value)
+}
+const [Tstyle,setTstyle] = useState("none")
+const [textstyle,settextstyle] = useState(Tstyle)
+const stylehandlechange = (e) => {
+    e.preventDefault()
+    settextstyle(e.target.value)
 }
 useEffect(()=>{
 console.log("existing array",prevtext)
@@ -74,6 +78,7 @@ if(!newtext == ""){
 setColor(colorcode)
         setvisible(false)
         setfontsize(newfont)
+        setTstyle(textstyle)
     }
 
 
@@ -105,7 +110,8 @@ const redo = (e) => {
         handlesubmit, 
         setnewtext,
         prevtext,
-        undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange
+        undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange,colorcode,Tstyle,
+        stylehandlechange
       };
 }
 export default UseChangetext;

@@ -35,7 +35,15 @@ const fontsizes = [10,12,14,16,18,20,22,24,26,28,30]
           ))}
             </select>
             <label htmlFor='fontsize'>Color : </label>
-     <input type='color' onChange={(e)=>newtext.colorhandlechange(e)} value={newtext.Color}></input>
+     <input type='color' onChange={(e)=>newtext.colorhandlechange(e)} value={newtext.colorcode}></input>
+</div>
+<div className='checkboxes'>
+<label>Bold
+<input type='checkbox'/></label>
+<label>italic
+<input type='checkbox'/></label>
+<label>underline
+<input type='checkbox'/></label>
 </div>
 <button type='submit' onClick={newtext.handlesubmit}>Submit</button>
             </form>
