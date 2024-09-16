@@ -32,37 +32,56 @@ const colorhandlechange = (e) =>{
     e.preventDefault();
     setcolorcode(e.target.value)
 }
-const [Tstyle,setTstyle] = useState("none")
-const [textstyle,settextstyle] = useState(Tstyle)
-const stylehandlechange = (e) => {
-    e.preventDefault()
-    settextstyle(e.target.value)
-}
+const [boldchecked,setboldchecked] = useState({boolean:false,css:"bold"})
+const [italicchecked,setitalicchecked] = useState({boolean:false,css:"italic"})
+const [underlinechecked,setunderlinechecked] = useState({boolean:false,css:"underline"})
+const [textstyle,settextstyle] = useState({bold:false,italic:false,underline:false})
 useEffect(()=>{
-console.log("existing array",prevtext)
-console.log("id",itemid)
-console.log("item itself",prevtext[itemid])
-console.log("length",prevtext.length)
-console.log( "redo",disableredobutton)
-console.log( "undo",disabelundo)
-console.log("new array",newarray)
-console.log("Color",colorcode)
-console.log("font size in ",itemid, " is ",fontsize)
-console.log("react icons FA",FaIcons.FaMix)
+console.log("bold ",textstyle.bold, " italic ",textstyle.italic," underline ",textstyle.underline)
+console.log("bold ",boldchecked.boolean, " italic ",italicchecked.boolean," underline ",underlinechecked.boolean)
 setnewarray([...prevtext])
 settext(prevtext[itemid])
     setdisableredobutton(itemid < prevtext.length-1)
     setdisableredobutton(itemid == prevtext.length-1)
     setdisabelundo(itemid > 0)
     setdisabelundo(itemid == 0)
-},[prevtext,itemid,text,colorcode])
+},[prevtext,itemid,text,colorcode,boldchecked,textstyle])
 
+
+
+const boldhandlechange = (e) => {
+    settextstyle(prevState => ({
+        ...prevState,  
+        bold: e.target.checked     
+      }));
+}
+const italichandlechange = (e) => {
+    settextstyle(prevState => ({
+        ...prevState,  
+        italic: e.target.checked     
+      }));
+}
+const underlinehandlechange = (e) => {
+    settextstyle(prevState => ({
+        ...prevState,  
+        underline: e.target.checked     
+      }));
+}
 
     const handlesubmit = (e) => {
 
-
-        e.preventDefault()
-
+        setboldchecked(prevState => ({
+            ...prevState,  
+            boolean: textstyle.bold    
+          }));
+          setitalicchecked(prevState => ({
+            ...prevState,  
+            boolean: textstyle.italic    
+          }));
+          setunderlinechecked(prevState => ({
+            ...prevState,  
+            boolean: textstyle.underline    
+          }));
 if(!newtext == ""){
     const newid = itemid + 1
     const length = prevtext.length
@@ -78,7 +97,6 @@ if(!newtext == ""){
 setColor(colorcode)
         setvisible(false)
         setfontsize(newfont)
-        setTstyle(textstyle)
     }
 
 
@@ -110,8 +128,10 @@ const redo = (e) => {
         handlesubmit, 
         setnewtext,
         prevtext,
-        undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange,colorcode,Tstyle,
-        stylehandlechange
+        undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange,colorcode,
+        boldhandlechange,
+italichandlechange,textstyle,
+underlinehandlechange,boldchecked,italicchecked,underlinechecked,boldchecked,italicchecked,underlinechecked
       };
 }
 export default UseChangetext;

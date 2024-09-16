@@ -12,7 +12,13 @@ import UseChangetext from '../../custom hooks/UseChangetext';
 import Form from '../../components/Form';
 export default function Website1({editable , seteditable}) {
 
-
+const textstylecomponent = (changetexthook)=>{
+  return {
+    fontWeight : changetexthook.boldchecked.boolean ? 'bold' : ''
+    ,fontStyle :changetexthook.boldchecked.boolean ? 'bold' : ''
+    ,textDecoration : changetexthook.boldchecked.boolean ? 'bold' : ''
+  }
+}
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
 const items = [
@@ -49,7 +55,7 @@ console.log(functions[0].fontsize,"a7a")
     <div className='homepage'>
       <header>
 <div>
-  <p onClick={(e)=>handleclick(e,0)} style={{fontSize:`${functions[0].fontsize}px`,color:`${functions[0].Color}`}}>{functions[0].text}</p>
+  <p onClick={(e)=>handleclick(e,0)} style={{fontSize:`${functions[0].fontsize}px`,color:`${functions[0].Color}`,fontStyle,textDecoration}}>{functions[0].text}</p>
 
   {editable && ( <button>Copy</button>) }
   <button onClick={(e)=>handleclick(e,1)} style={{fontSize:`${functions[1].fontsize}px`,color:`${functions[1].Color}`}}>{functions[1].text}</button>

@@ -381,3 +381,14 @@ p{
 .backicon{
   transition: all ease 0.5s;
 }
+.fuck{
+  display: flex;
+  flex-direction: column;
+}
+.fuck div label{
+width: 140px;
+text-align: left;
+}
+.fuck div{
+  display: flex;
+}
