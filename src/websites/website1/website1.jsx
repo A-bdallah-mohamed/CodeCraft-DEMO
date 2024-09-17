@@ -10,15 +10,18 @@ import { Link } from 'react-router-dom';
 import { useRef , useState , useEffect } from 'react';
 import UseChangetext from '../../custom hooks/UseChangetext';
 import Form from '../../components/Form';
+
 export default function Website1({editable , seteditable}) {
 
-const textstylecomponent = (changetexthook)=>{
-  return {
-    fontWeight : changetexthook.boldchecked.boolean ? 'bold' : ''
-    ,fontStyle :changetexthook.boldchecked.boolean ? 'bold' : ''
-    ,textDecoration : changetexthook.boldchecked.boolean ? 'bold' : ''
+  const textstylecomponent = (changetexthook) => {
+    return {
+      fontWeight : changetexthook.boldchecked.boolean ? 'bold' : ''
+      ,fontStyle :changetexthook.italicchecked.boolean ? 'italic' : 'nomral'
+      ,textDecoration : changetexthook.underlinechecked.boolean ? 'underline' : 'none'
+      ,fontSize : `${changetexthook.fontsize}px`
+      ,color: changetexthook.Color
+    }
   }
-}
 const [position,setposition] = useState({x:0,y:0})
 const [formvisible,setformvisible] = useState(false)
 const items = [
@@ -37,14 +40,20 @@ const [selectedItemId,setselectedItemId] = useState()
 const itemTexts = items.map((item) => ({
   ...item,
   textState: UseChangetext(item.text, editable, setformvisible),
+
 }));
 const functions = [];
 for(let i=0 ; i<items.length ; i++){
 const item = items[i]
 functions[i] = UseChangetext(item.text,setformvisible,item.icon)
 }
+const styles = [];
+for(let i=0 ; i<items.length ; i++){
+const item = items[i]
+styles[i] = textstylecomponent(functions[i])
+}
 useEffect(()=> {
-console.log(functions[0].fontsize,"a7a")
+console.log(styles[0],"a7a")
 },[functions])
   return (
     
@@ -55,10 +64,10 @@ console.log(functions[0].fontsize,"a7a")
     <div className='homepage'>
       <header>
 <div>
-  <p onClick={(e)=>handleclick(e,0)} style={{fontSize:`${functions[0].fontsize}px`,color:`${functions[0].Color}`,fontStyle,textDecoration}}>{functions[0].text}</p>
+  <p onClick={(e)=>handleclick(e,0)} style={styles[0]}>{functions[0].text}</p>
 
   {editable && ( <button>Copy</button>) }
-  <button onClick={(e)=>handleclick(e,1)} style={{fontSize:`${functions[1].fontsize}px`,color:`${functions[1].Color}`}}>{functions[1].text}</button>
+  <button onClick={(e)=>handleclick(e,1)} style={styles[1]}>{functions[1].text}</button>
 </div>
 <ul>
   <li>LinkedIN</li>

@@ -131,7 +131,7 @@ const redo = (e) => {
         undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange,colorcode,
         boldhandlechange,
 italichandlechange,textstyle,
-underlinehandlechange,boldchecked,italicchecked,underlinechecked,boldchecked,italicchecked,underlinechecked
+underlinehandlechange,boldchecked,italicchecked,underlinechecked
       };
 }
 export default UseChangetext;
