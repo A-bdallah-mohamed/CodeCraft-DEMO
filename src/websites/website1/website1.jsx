@@ -15,8 +15,8 @@ export default function Website1({editable , seteditable}) {
 
   const textstylecomponent = (changetexthook) => {
     return {
-      fontWeight : changetexthook.boldchecked.boolean ? 'bold' : ''
-      ,fontStyle :changetexthook.italicchecked.boolean ? 'italic' : 'nomral'
+      fontWeight : changetexthook.boldchecked.boolean ? 'bold' : 'none'
+      ,fontStyle :changetexthook.italicchecked.boolean ? 'italic' : ''
       ,textDecoration : changetexthook.underlinechecked.boolean ? 'underline' : 'none'
       ,fontSize : `${changetexthook.fontsize}px`
       ,color: changetexthook.Color
@@ -52,9 +52,6 @@ for(let i=0 ; i<items.length ; i++){
 const item = items[i]
 styles[i] = textstylecomponent(functions[i])
 }
-useEffect(()=> {
-console.log(styles[0],"a7a")
-},[functions])
   return (
     
 <div className='website1container'>

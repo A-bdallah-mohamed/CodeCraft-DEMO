@@ -3,15 +3,28 @@
     padding: 10px 25px;
     border-radius: 10px;
 overflow: hidden;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(255, 255, 255);
     gap: 5px;
     display: flex;
+    width: auto;
     z-index: 100;
-    border: 1px solid black;
+    box-shadow: 0px 2px 25px 0px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     overflow: hidden;
-    width: auto;
-    height: auto;
+    transition: all ease 0.5s;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: auto;
+overflow-y: auto;
+max-height: 1000;
+}
+.fakecontent{
+    overflow: hidden;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     transition: all ease 0.5s;
 display: flex;
 align-items: center;
@@ -21,11 +34,27 @@ justify-content: center;
     gap: 10px;
     display: flex;
 }
-.inputnbutton input{
+.inputnbutton button{
+    background-color: rgb(228, 228, 228);
+}
+ input{
     border-radius: 5px;
-    border: 1px solid rgb(145, 155, 199);
+    border: none;
+    background-color: rgb(233, 233, 233);
     padding: 5px 0;
 }
+select,option {
+ 
+    outline: none;  
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+margin: 4px 0 0 5px;
+    cursor: pointer;
+  }
+  input[type="color"] {
+        cursor: pointer;
+      }
 .inputnbutton input:focus{
    
     outline: 2px solid rgb(63, 98, 255);
@@ -34,9 +63,23 @@ justify-content: center;
 padding-left: 5px;
 }
  button{
-    border-radius: 5px;
-    border: 1px solid rgb(145, 155, 199);
-    padding: 5px 5px;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 10px 15px;
+gap: 5px;
+font-weight: bold;
+margin-top: 5px;
+    background-color: rgb(218, 218, 218);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease all;
+    border-radius: 7px;
+}
+button:disabled{
+    border: 1px solid rgb(194, 194, 194);
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 .closelogo{
     position: absolute;
@@ -79,9 +122,24 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .checkboxes{
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+.submitbutton{
+    background-color: rgb(228, 228, 228);
+
+}
+button:hover{
+    background-color: rgb(0, 81, 255);
+    transition: 0.5s ease all;
+    color: rgb(255, 255, 255);
+}
+button:disabled:hover{
+    background-color: rgb(0, 0, 0);
+    transition: 0.5s ease all;
+    color: rgb(255, 255, 255);
 }

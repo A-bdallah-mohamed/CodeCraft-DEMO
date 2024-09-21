@@ -37,15 +37,13 @@ const [italicchecked,setitalicchecked] = useState({boolean:false,css:"italic"})
 const [underlinechecked,setunderlinechecked] = useState({boolean:false,css:"underline"})
 const [textstyle,settextstyle] = useState({bold:false,italic:false,underline:false})
 useEffect(()=>{
-console.log("bold ",textstyle.bold, " italic ",textstyle.italic," underline ",textstyle.underline)
-console.log("bold ",boldchecked.boolean, " italic ",italicchecked.boolean," underline ",underlinechecked.boolean)
 setnewarray([...prevtext])
 settext(prevtext[itemid])
     setdisableredobutton(itemid < prevtext.length-1)
     setdisableredobutton(itemid == prevtext.length-1)
     setdisabelundo(itemid > 0)
     setdisabelundo(itemid == 0)
-},[prevtext,itemid,text,colorcode,boldchecked,textstyle])
+},[prevtext,itemid,text,colorcode,boldchecked,textstyle,italicchecked])
 
 
 
@@ -131,7 +129,7 @@ const redo = (e) => {
         undo, redo ,disableredobutton ,disabelundo,style ,fontsize,handlefontchange,icon,Color,colorhandlechange,colorcode,
         boldhandlechange,
 italichandlechange,textstyle,
-underlinehandlechange,boldchecked,italicchecked,underlinechecked
+underlinehandlechange,boldchecked,italicchecked,underlinechecked,newfont
       };
 }
 export default UseChangetext;
