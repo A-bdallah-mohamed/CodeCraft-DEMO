@@ -60,7 +60,7 @@ export default function Form({
       </div>
       <div className='buttonoptions'>
       <label htmlFor='color'>Background Color :  <input type='color' onChange={(e) => newtext.colorhandlechange(e)} value={newtext.colorcode} /></label>
-      <label htmlFor='color'>Spacing :  
+      <label htmlFor='color'>Spacing  :   
         <select value={newtext.newfont}>
           <option value="large">Large</option>
         </select>
